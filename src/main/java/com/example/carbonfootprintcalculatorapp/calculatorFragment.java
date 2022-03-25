@@ -23,6 +23,7 @@ public class calculatorFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private WebView webview();
 
     public calculatorFragment() {
         // Required empty public constructor
@@ -52,6 +53,10 @@ public class calculatorFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            
+            webview = (WebView) findViewById(R.id.webview);
+            webview.SetWebviewClient(new WebViewClient());
+            webview.loadURL("https://calculator.carbonfootprint.com/calculator.aspx");
         }
     }
 
